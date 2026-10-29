@@ -1,0 +1,306 @@
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1f2a44;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --up-to-date: #16a34a;
+  --up-to-date-bg: #dcfce7;
+  --to-catch-up: #dc2626;
+  --to-catch-up-bg: #fee2e2;
+  --accent: #f59e0b;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+/* Upcoming exams panel */
+.upcoming-panel {
+  border-left: 4px solid var(--accent);
+}
+
+.upcoming {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.upcoming-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: #fff8ed;
+  border: 1px solid #fde8c4;
+  border-radius: var(--radius);
+}
+
+.upcoming-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.upcoming-name {
+  font-weight: 600;
+}
+
+.upcoming-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Add module form */
+.add-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.field input {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.field input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Modules */
+.modules-section h2 {
+  margin-left: 0.25rem;
+}
+
+#modules-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.module-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+}
+
+.module-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.module-name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.module-code {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 0.1rem 0.45rem;
+  border-radius: 6px;
+}
+
+.remove-btn {
+  background: transparent;
+  border: 1px solid var(--to-catch-up);
+  color: var(--to-catch-up);
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: var(--to-catch-up-bg);
+}
+
+.progress-summary {
+  margin: 0.75rem 0;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.progress-bar {
+  margin-top: 0.35rem;
+  height: 10px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--up-to-date);
+  transition: width 0.2s ease;
+}
+
+.exam-field {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.exam-field input {
+  margin-left: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.weeks-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.week-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.week {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.week.up-to-date {
+  background: var(--up-to-date-bg);
+  color: var(--up-to-date);
+  border-color: var(--up-to-date);
+}
+
+.week.to-catch-up {
+  background: var(--to-catch-up-bg);
+  color: var(--to-catch-up);
+  border-color: var(--to-catch-up);
+}
+
+.week:hover {
+  filter: brightness(0.96);
+}
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 520px) {
+  .module-header {
+    flex-direction: column;
+  }
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+}
